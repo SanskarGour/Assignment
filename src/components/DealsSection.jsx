@@ -57,7 +57,6 @@ const DealsSection = () => {
     }));
   }, [searchTerm, activeDealsOnly, fromDate, toDate]);
 
-  // Calculate filtered stats
   const filteredStats = useMemo(() => {
     const allFilteredDeals = filteredStages.flatMap((stage) => stage.deals);
     return {
@@ -71,7 +70,6 @@ const DealsSection = () => {
 
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 mx-6 mb-6">
-      {/* Tabs */}
       <div className="border-b border-gray-200">
         <div className="flex">
           <button
@@ -97,12 +95,9 @@ const DealsSection = () => {
         </div>
       </div>
 
-      {/* Summary and Controls */}
       <div className="p-6 border-b border-gray-200">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          {/* Left side - View toggle and summary */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            {/* View Mode Toggle */}
             <div className="flex bg-gray-100 rounded-lg p-1">
               <button
                 onClick={() => setViewMode("pipeline")}
@@ -126,7 +121,6 @@ const DealsSection = () => {
               </button>
             </div>
 
-            {/* Summary */}
             <div className="text-sm text-gray-600">
               Total Deals:{" "}
               <span className="font-semibold text-gray-900">
@@ -139,9 +133,7 @@ const DealsSection = () => {
             </div>
           </div>
 
-          {/* Right side - Search and Filters */}
           <div className="flex flex-col sm:flex-row gap-4">
-            {/* Search */}
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <IoMdSearch />
@@ -155,7 +147,6 @@ const DealsSection = () => {
               />
             </div>
 
-            {/* Date Range */}
             <div className="flex gap-2">
               <input
                 type="date"
@@ -173,7 +164,6 @@ const DealsSection = () => {
               />
             </div>
 
-            {/* Active Deals Checkbox */}
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -184,7 +174,6 @@ const DealsSection = () => {
               <span className="ml-2 text-sm text-gray-700">Active Deals</span>
             </label>
 
-            {/* Clear Button */}
             <button
               onClick={clearFilters}
               className="px-2 py-2 text-sm text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors flex justify-center items-center gap-1"
@@ -195,7 +184,6 @@ const DealsSection = () => {
         </div>
       </div>
 
-      {/* Pipeline/List Content */}
       <div className="p-6">
         {viewMode === "list" ? (
           <div className="space-y-4">
@@ -209,10 +197,10 @@ const DealsSection = () => {
                   className="w-full px-4 py-3 bg-gray-50 border-b border-gray-200 flex items-center justify-between hover:bg-gray-100 transition-colors"
                 >
                   <div className="flex items-center gap-1">
-                    {!expandedStages[stage.name + index] ? (
-                      <FaCaretRight />
+                    {expandedStages[stage.name + index] ? (
+                    <FaCaretDown />
                     ) : (
-                      <FaCaretDown />
+                      <FaCaretRight />
                     )}
                     <span className="font-medium text-gray-900">
                       {stage.name}
