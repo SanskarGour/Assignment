@@ -24,7 +24,7 @@ export const dealsData = [
       initials: "MS",
       avatar: "MS"
     },
-    dealName: "some deal 4",
+    dealName: "Accounting",
     dealBudget: 7000,
     assignee: {
       name: "Michael Speed",
@@ -174,7 +174,7 @@ export const pipelineStages = [
           initials: "MS",
           avatar: "MS"
         },
-        dealName: "some deal 4",
+        dealName: "Accounting",
         dealBudget: 7000,
         assignee: {
           name: "Michael Speed",

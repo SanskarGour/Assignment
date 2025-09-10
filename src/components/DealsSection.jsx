@@ -7,7 +7,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 const DealsSection = () => {
   const [activeTab, setActiveTab] = useState("My Deals");
-  const [viewMode, setViewMode] = useState("list"); // 'pipeline' or 'list'
+  const [viewMode, setViewMode] = useState("list");
   const [expandedStages, setExpandedStages] = useState({ Negotiating0: true });
   const [searchTerm, setSearchTerm] = useState("");
   const [fromDate, setFromDate] = useState("");
@@ -287,7 +287,6 @@ const DealsSection = () => {
                                 <td className="px-4 py-4 whitespace-nowrap text-right text-sm">
                                   <button className="text-gray-400 hover:text-gray-600 p-1">
                                     <BsThreeDotsVertical />
-
                                   </button>
                                 </td>
                               </tr>
@@ -301,65 +300,8 @@ const DealsSection = () => {
             ))}
           </div>
         ) : (
-          <div className="pipeline-view">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredStages.map((stage, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 rounded-lg p-4 border border-gray-200"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-medium text-gray-900">{stage.name}</h3>
-                    <span className="text-sm text-gray-500">
-                      {stage.deals.length} deals
-                    </span>
-                  </div>
-                  <div className="text-2xl font-bold text-gray-900 mb-4">
-                    $
-                    {stage.deals
-                      .reduce((sum, deal) => sum + deal.dealBudget, 0)
-                      .toLocaleString()}
-                  </div>
-                  <div className="space-y-2">
-                    {stage.deals.map((deal) => (
-                      <div
-                        key={deal.id}
-                        className="bg-white rounded-lg p-3 border border-gray-200 hover:shadow-sm transition-shadow"
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center">
-                            <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-2">
-                              <span className="text-white font-medium text-xs">
-                                {deal.client.initials}
-                              </span>
-                            </div>
-                            <span className="text-sm font-medium text-gray-900">
-                              {deal.client.name}
-                            </span>
-                          </div>
-                          <span className="text-sm font-bold text-gray-900">
-                            ${deal.dealBudget.toLocaleString()}
-                          </span>
-                        </div>
-                        <div className="text-xs text-gray-600 mb-1">
-                          {deal.dealName}
-                        </div>
-                        <div className="flex items-center">
-                          <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center mr-1">
-                            <span className="text-white font-medium text-xs">
-                              {deal.assignee.initials}
-                            </span>
-                          </div>
-                          <span className="text-xs text-gray-600">
-                            {deal.assignee.name}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="text-gray-500">
+            Pipeline view cooming soon ...
           </div>
         )}
       </div>

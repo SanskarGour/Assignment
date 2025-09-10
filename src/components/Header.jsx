@@ -6,7 +6,6 @@ const Header = () => {
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
         <div className="flex items-center">
           <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center mr-3">
             <span className="text-white font-bold text-sm">#</span>
@@ -14,7 +13,6 @@ const Header = () => {
           <span className="text-xl font-bold text-gray-900">ROSTER GRID</span>
         </div>
 
-        {/* Navigation Menu */}
         <nav className="hidden lg:flex items-center space-x-8">
           <a
             href="#"
@@ -67,7 +65,6 @@ const Header = () => {
           </a>
         </nav>
 
-        {/* Right side - Notifications and User */}
         <div className="flex items-center space-x-4">
           <button className="p-2 text-gray-600 hover:text-gray-900 cursor-pointer">
             <GoBell className=" text-gray-600 hover:text-gray-900 text-lg" />

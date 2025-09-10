@@ -54,21 +54,3 @@ export const searchDeals = (deals, searchTerm) => {
   );
 };
 
-export const sortDeals = (deals, sortBy) => {
-  const sortedDeals = [...deals];
-  
-  switch (sortBy) {
-    case 'price-low':
-      return sortedDeals.sort((a, b) => a.price - b.price);
-    case 'price-high':
-      return sortedDeals.sort((a, b) => b.price - a.price);
-    case 'rating':
-      return sortedDeals.sort((a, b) => b.rating - a.rating);
-    case 'newest':
-      return sortedDeals.sort((a, b) => b.id - a.id);
-    case 'featured':
-      return sortedDeals.sort((a, b) => b.featured - a.featured);
-    default:
-      return sortedDeals;
-  }
-};
